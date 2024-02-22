@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/crebito
+    hikari:
+      username: postgres
+      password: 123
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jooq:
+    sql-dialect: org.hibernate.PostgreSQLDialect
