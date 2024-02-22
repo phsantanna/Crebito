@@ -1,3 +1,4 @@
+CREATE TYPE tipo_transacao as ENUM('DEBITO','CREDITO');
 CREATE TABLE tb_transacoes (
                                id SERIAL PRIMARY KEY,
                                valor DOUBLE PRECISION NOT NULL,
