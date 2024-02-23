@@ -1,5 +1,6 @@
 package com.controle.de.concorrencia.crebito.Crebito.service;
 
+import com.controle.de.concorrencia.crebito.Crebito.dto.ClienteDto;
 import com.controle.de.concorrencia.crebito.Crebito.infra.exceptions.ClienteNaoEncontradoException;
 import com.controle.de.concorrencia.crebito.Crebito.model.Cliente;
 import com.controle.de.concorrencia.crebito.Crebito.repository.ClienteRepository;
@@ -20,5 +21,11 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente buscarClientePorId(Long id) {
         return clienteRepository.findById(id)
                 .orElseThrow(() -> new ClienteNaoEncontradoException("Cliente não encontrado com o ID fornecido: " + id));
+    }
+
+    @Override
+    public void cadastrarCliente(ClienteDto clienteDto) {
+        Cliente cliente = new Cliente(clienteDto);
+        clienteRepository.save(cliente);
     }
 }

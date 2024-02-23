@@ -1,6 +1,7 @@
 package com.controle.de.concorrencia.crebito.Crebito.model;
 
 
+import com.controle.de.concorrencia.crebito.Crebito.dto.ClienteDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +17,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Cliente {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -25,6 +25,11 @@ public class Cliente {
     private double limite;
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transacoes> transacoes;
+
+    public Cliente(ClienteDto clienteDto) {
+        this.saldoInicial = clienteDto.saldoInicial();
+        this.limite = clienteDto.limite();
+    }
 
     @Override
     public final boolean equals(Object o) {
