@@ -3,17 +3,16 @@ package com.controle.de.concorrencia.crebito.Crebito.service;
 import com.controle.de.concorrencia.crebito.Crebito.model.Cliente;
 import com.controle.de.concorrencia.crebito.Crebito.repository.ClienteRepository;
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class ClienteInitialization {
 
-
+    @Autowired
     private ClienteRepository clienteRepository;
-    public ClienteInitialization(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
+
 
     @PostConstruct
     @Transactional
