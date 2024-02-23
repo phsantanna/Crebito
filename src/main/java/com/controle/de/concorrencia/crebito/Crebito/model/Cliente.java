@@ -3,7 +3,6 @@ package com.controle.de.concorrencia.crebito.Crebito.model;
 
 import com.controle.de.concorrencia.crebito.Crebito.dto.ClienteDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,8 +10,6 @@ import org.hibernate.proxy.HibernateProxy;
 
 import java.util.List;
 import java.util.Objects;
-
-@Table(name = "tb_cliente")
 @Entity(name = "cliente")
 @Getter
 @Setter

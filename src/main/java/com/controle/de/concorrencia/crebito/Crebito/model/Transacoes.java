@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity(name = "transacoes")
-@Table(name = "tb_transacoes")
 @Getter
 @Setter
 @NoArgsConstructor
